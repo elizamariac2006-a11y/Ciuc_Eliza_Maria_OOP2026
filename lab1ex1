@@ -1,0 +1,72 @@
+#include <iostream>
+
+using namespace std;
+
+int finalNumber[105], finalNumberLen;
+bool verifOnlyCifs(char number[100]);
+
+void addNewNumber(char number[100]) {
+	if (verifOnlyCifs(number) == false) {
+		printf("numarul %s este invalid. nu s a adaugat!\n", number);
+		return;
+	}
+	//cout << number << "\n";
+	int len, temp;
+	len = strlen(number);
+	int st = 0, dr = len - 1;
+	while (st < dr) {
+		swap(number[st], number[dr]);
+		st++;
+		dr--;
+	}
+	temp = 0;
+	if (finalNumberLen < len) {
+		finalNumberLen = len;
+	}
+	for (int i = 0; i < finalNumberLen; i++) {
+		int cifra;
+		if (i < len) {
+			cifra = (int)(number[i] - '0');
+		} else {
+			cifra = 0;
+		}
+
+		temp = temp + cifra + finalNumber[i];
+		finalNumber[i] = temp % 10;
+		temp /= 10;
+	}
+	while (temp > 0) {
+		finalNumberLen++;
+		finalNumber[finalNumberLen - 1] = temp % 10;
+		temp /= 10;
+	}
+	
+}
+
+bool verifOnlyCifs(char number[100]) {
+	for (int i = 0; number[i] != '\0'; i++) {
+		if (number[i] < '0' || number[i] > '9') {
+			return false;
+		}
+	}
+	return true;
+}
+
+int main() {
+	FILE* f;
+	if(fopen_s(&f, "in.txt", "r+") != 0)
+		printf("eroare\n");
+	else {
+		printf("fisier deschis\n");
+	}
+
+	char number[100];
+	while (fscanf_s(f, "%99s", number, (unsigned int)sizeof(number)) != EOF) {
+		//printf("%s\n", number);
+		addNewNumber(number);
+	}
+
+	for (int i = finalNumberLen - 1; i >= 0; i--) {
+		printf("%d", finalNumber[i]);
+	}
+}
