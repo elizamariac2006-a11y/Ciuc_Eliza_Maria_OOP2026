@@ -1,0 +1,9 @@
+﻿  GlobalFunctionsExtra.cpp
+  mainF.cpp
+C:\Users\Elizoi\Documents\C# aparent\lab2ex2\mainF.cpp(137,19): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Elizoi\Documents\C# aparent\lab2ex2\mainF.cpp(143,19): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Elizoi\Documents\C# aparent\lab2ex2\mainF.cpp(149,19): warning C4305: 'argument': truncation from 'double' to 'float'
+  Movie.cpp
+  MovieSeries.cpp
+  Generating Code...
+  lab2ex2.vcxproj -> C:\Users\Elizoi\Documents\C# aparent\oopExercitii\x64\Debug\lab2ex2.exe
