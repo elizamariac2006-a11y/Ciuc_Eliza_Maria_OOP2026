@@ -1,0 +1,7 @@
+﻿  Sort.cpp
+C:\Users\Elizoi\Documents\C# aparent\lab4\Sort.cpp(21,14): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Elizoi\Documents\C# aparent\lab4\Sort.cpp(44,21): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Elizoi\Documents\C# aparent\lab4\Sort.cpp(59,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  main.cpp
+  Generating Code...
+  lab4.vcxproj -> C:\Users\Elizoi\Documents\C# aparent\oopExercitii\x64\Debug\lab4.exe
