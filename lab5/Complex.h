@@ -8,6 +8,8 @@ private:
 public:
     Complex();
     Complex(double real, double imag);
+    Complex(const Complex& complex);
+    Complex(Complex&& complex);
 
     bool is_real() const;
 
@@ -17,16 +19,28 @@ public:
     Complex conjugate() const;
 
     Complex& operator()(double real, double imag);
-
-    friend Complex operator+(const Complex& l, const Complex& r);
-    friend Complex operator+(const Complex& l, double r);
-    friend Complex operator+(double l, const Complex& r);
-
-    friend Complex operator-(const Complex& obj);
-
-    friend bool operator==(const Complex& l, const Complex& r);
-
-    friend std::ostream& operator<<(std::ostream& out, const Complex& complex);
+    Complex& operator=(const Complex& complex);
+    Complex& operator=(Complex&& complex);
+    Complex& operator++(); //++a
+    Complex operator++(int); //a++
+    Complex& operator--(); //--a
+    Complex operator--(int); //a--
 };
+
+Complex operator+(const Complex& l, const Complex& r);
+Complex operator+(const Complex& l, double r);
+Complex operator+(double l, const Complex& r);
+Complex operator-(const Complex& l, const Complex& r);
+Complex operator-(const Complex& l, double r);
+Complex operator-(double l, const Complex& r);
+Complex operator*(const Complex& l, const Complex& r);
+Complex operator*(const Complex& l, double r);
+Complex operator*(double l, const Complex& r);
+Complex operator-(const Complex& obj);
+
+bool operator==(const Complex& l, const Complex& r);
+bool operator!=(const Complex& l, const Complex& r);
+
+std::ostream& operator<<(std::ostream& out, const Complex& complex);
 
 
